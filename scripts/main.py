@@ -41,7 +41,7 @@ def mxFaceAPI(_: gr.Blocks, app: FastAPI):
 
         decoded_data = base64.b64decode(image)
         np_data = np.fromstring(decoded_data,np.uint8)
-        img = cv2.imdecode(np_data,cv2.COLOR_RGBA2RGB)
+        img = cv2.imdecode(np_data,cv2.IMREAD_COLOR)
         # img = cv2.resize(img, (720, 640))
 
         fr_cv = img.copy()
